@@ -1,0 +1,228 @@
+{
+  "services": [
+    {
+      "slug": "mobile-apps",
+      "title": "Mobile apps",
+      "summary": "Native iOS and Android apps, built for speed.",
+      "description": "We design and build iOS and Android apps, from a first version with the essential features to a full product with API integrations and an admin panel.",
+      "points": [
+        "iOS and Android",
+        "UI/UX design",
+        "API integrations and admin panel"
+      ],
+      "image": "/brand/services/mobile-apps.jpg",
+      "imageAlt": "Illustration: two phone screens with app layouts",
+      "order": 0
+    },
+    {
+      "slug": "web-development",
+      "title": "Web development",
+      "summary": "Websites and web apps that load fast and convert.",
+      "description": "Static websites, dynamic websites with a database and admin panel, and e-commerce builds. Responsive on every screen and set up for search from the first release.",
+      "points": [
+        "Static and dynamic websites",
+        "E-commerce",
+        "Speed optimization"
+      ],
+      "image": "/brand/services/web-development.jpg",
+      "imageAlt": "Illustration: a browser window with code",
+      "order": 1
+    },
+    {
+      "slug": "seo-aeo",
+      "title": "SEO & AEO",
+      "summary": "Rank on search engines and get cited by answer engines.",
+      "description": "Search engine optimization for Google, plus answer engine optimization so AI assistants can find your business and cite it in their answers.",
+      "points": [
+        "On-page and technical SEO",
+        "Google Business listing",
+        "AEO for AI answers"
+      ],
+      "image": "/brand/services/seo-aeo.jpg",
+      "imageAlt": "Illustration: a search bar with the top result highlighted",
+      "order": 2
+    },
+    {
+      "slug": "ai-agents",
+      "title": "AI agent development",
+      "summary": "Agents that handle support, sales and operations tasks.",
+      "description": "AI agents and chat assistants that know your business, like the assistant on this site, connected to the tools your team already uses.",
+      "points": [
+        "Support and sales assistants",
+        "Workflow automation",
+        "Integration with your systems"
+      ],
+      "image": "/brand/services/ai-agents.jpg",
+      "imageAlt": "Illustration: a chat conversation beside a processor chip",
+      "order": 3
+    },
+    {
+      "slug": "ar-vr",
+      "title": "AR/VR development",
+      "summary": "Immersive experiences for products, training and showrooms.",
+      "description": "Augmented and virtual reality experiences that let customers see a product in their own space, or let your team train in a realistic setting.",
+      "points": [
+        "AR product previews",
+        "VR training",
+        "Virtual showrooms"
+      ],
+      "image": "/brand/services/ar-vr.jpg",
+      "imageAlt": "Illustration: a VR headset and a 3D cube",
+      "order": 4
+    },
+    {
+      "slug": "3d-modelling",
+      "title": "3D modelling",
+      "summary": "Models and renders for products and spaces.",
+      "description": "Detailed 3D models and renders of products and spaces, ready for marketing, presentations, or AR/VR projects.",
+      "points": [
+        "Product models",
+        "Renders of spaces",
+        "Assets for AR/VR"
+      ],
+      "image": "/brand/services/3d-modelling.jpg",
+      "imageAlt": "Illustration: a wireframe 3D cube",
+      "order": 5
+    },
+    {
+      "slug": "digital-marketing",
+      "title": "Digital marketing",
+      "summary": "Campaigns that bring in enquiries.",
+      "description": "Social media and search campaigns planned around the enquiries they bring in, with clear reporting on what each one returns.",
+      "points": [
+        "Social media marketing",
+        "Search campaigns",
+        "Campaign reporting"
+      ],
+      "image": "/brand/services/digital-marketing.jpg",
+      "imageAlt": "Illustration: a rising bar chart",
+      "order": 6
+    },
+    {
+      "slug": "enterprise-crm",
+      "title": "Enterprise software, custom CRM & GEO",
+      "summary": "Systems built around how your business already works.",
+      "description": "Enterprise software and custom CRM systems shaped around your existing process, plus generative engine optimization (GEO) for AI search.",
+      "points": [
+        "Enterprise software",
+        "Custom CRM",
+        "GEO (generative engine optimization)"
+      ],
+      "image": "/brand/services/enterprise-crm.jpg",
+      "imageAlt": "Illustration: a CRM table with a sidebar",
+      "order": 7
+    }
+  ],
+  "packages": [
+    {
+      "price": "",
+      "isPremium": false,
+      "category": "Custom app development",
+      "name": "Basic app",
+      "features": [
+        "Essential features",
+        "Clean UI/UX",
+        "Scalable code"
+      ],
+      "order": 0
+    },
+    {
+      "price": "",
+      "isPremium": false,
+      "category": "Custom app development",
+      "name": "Standard app",
+      "features": [
+        "Advanced features",
+        "API integrations",
+        "Admin panel"
+      ],
+      "order": 1
+    },
+    {
+      "price": "",
+      "isPremium": true,
+      "category": "Custom app development",
+      "name": "Premium app",
+      "features": [
+        "Custom solution",
+        "Premium UI/UX",
+        "24/7 support"
+      ],
+      "order": 2
+    },
+    {
+      "price": "",
+      "isPremium": false,
+      "category": "Static website",
+      "name": "Basic static website",
+      "features": [
+        "Single page",
+        "Responsive design",
+        "Basic SEO"
+      ],
+      "order": 3
+    },
+    {
+      "price": "",
+      "isPremium": false,
+      "category": "Static website",
+      "name": "Standard static website",
+      "features": [
+        "5-page website",
+        "On-page SEO",
+        "Contact form"
+      ],
+      "order": 4
+    },
+    {
+      "price": "",
+      "isPremium": true,
+      "category": "Static website",
+      "name": "Premium static website",
+      "features": [
+        "5+ page website",
+        "Advanced SEO",
+        "Google listing",
+        "Speed optimized"
+      ],
+      "order": 5
+    },
+    {
+      "price": "",
+      "isPremium": false,
+      "category": "Dynamic website",
+      "name": "Basic dynamic website",
+      "features": [
+        "Database integration",
+        "Admin panel",
+        "Basic SEO"
+      ],
+      "order": 6
+    },
+    {
+      "price": "",
+      "isPremium": false,
+      "category": "Dynamic website",
+      "name": "Standard dynamic website",
+      "features": [
+        "User authentication",
+        "Dynamic content",
+        "Contact form"
+      ],
+      "order": 7
+    },
+    {
+      "price": "",
+      "isPremium": true,
+      "category": "Dynamic website",
+      "name": "Premium dynamic website",
+      "features": [
+        "E-commerce features",
+        "Advanced security",
+        "Admin dashboard",
+        "Speed optimized"
+      ],
+      "order": 8
+    }
+  ]
+}

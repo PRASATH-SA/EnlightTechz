@@ -1,0 +1,91 @@
+/* ENLIGHT TECHZ — generated from tokens.json */
+:root, [data-theme="light"] {
+  --primary: #6600ff;
+  --primary-hover: #5200cc;
+  --primary-text: #6600ff;
+  --primary-soft: #f1e9ff;
+  --on-primary: #ffffff;
+  --neon: #8c3dff;
+  --success: #0f7b4d;
+  --surface: #ffffff;
+  --surface-alt: #f6f7fb;
+  --ink: #0b1220;
+  --ink-muted: #475569;
+  --line: #e5e7eb;
+  --line-strong: #7c8698;
+  --glass-fill: rgba(255, 255, 255, 0.6);
+  --glass-stroke: rgba(255, 255, 255, 0.9);
+  --glass-sheen: rgba(255, 255, 255, 0.75);
+  --shadow-glass: 0 8px 32px rgba(40, 0, 110, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  --shadow-lift: 0 24px 48px rgba(40, 0, 110, 0.14);
+  --shadow-neon: 0 0 0 1px rgba(102, 0, 255, 0.45), 0 0 18px rgba(102, 0, 255, 0.22);
+  --shadow-neon-strong: 0 0 0 1px rgba(102, 0, 255, 0.7), 0 0 28px rgba(102, 0, 255, 0.35);
+  --shadow-button: 0 8px 24px rgba(102, 0, 255, 0.32);
+}
+[data-theme="dark"] {
+  --primary: #6600ff;
+  --primary-hover: #7a1fff;
+  --primary-text: #a78bfa;
+  --primary-soft: #1b1240;
+  --on-primary: #ffffff;
+  --neon: #9d5cff;
+  --success: #34d399;
+  --surface: #0a0f1c;
+  --surface-alt: #121a2e;
+  --ink: #f1f5f9;
+  --ink-muted: #94a3b8;
+  --line: #1f2a44;
+  --line-strong: #5b6985;
+  --glass-fill: rgba(18, 26, 46, 0.6);
+  --glass-stroke: rgba(148, 163, 184, 0.22);
+  --glass-sheen: rgba(255, 255, 255, 0.08);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  --shadow-lift: 0 24px 48px rgba(0, 0, 0, 0.6);
+  --shadow-neon: 0 0 0 1px rgba(157, 92, 255, 0.85), 0 0 24px rgba(102, 0, 255, 0.55), 0 0 72px rgba(102, 0, 255, 0.28);
+  --shadow-neon-strong: 0 0 0 1px rgba(181, 133, 255, 1), 0 0 32px rgba(102, 0, 255, 0.8), 0 0 96px rgba(102, 0, 255, 0.45);
+  --shadow-button: 0 0 24px rgba(102, 0, 255, 0.6);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --space-32: 128px;
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --glass-blur: 20px;
+  --duration-instant: 120ms;
+  --duration-fast: 200ms;
+  --duration-base: 360ms;
+  --duration-slow: 700ms;
+  --stagger: 70ms;
+  --marquee: 40s;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --parallax-far: 0.35;
+  --parallax-mid: 0.18;
+  --parallax-near: -0.12;
+  --tilt-max: 6deg;
+  --magnet-pull: 0.25;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+.display-xl { font-family: var(--font-display); font-size: 61px; line-height: 64px; font-weight: 600; letter-spacing: -0.03em; }
+.display { font-family: var(--font-display); font-size: 49px; line-height: 56px; font-weight: 600; letter-spacing: -0.025em; }
+.heading-1 { font-family: var(--font-display); font-size: 39px; line-height: 44px; font-weight: 600; letter-spacing: -0.02em; }
+.heading-2 { font-family: var(--font-display); font-size: 31px; line-height: 36px; font-weight: 600; letter-spacing: -0.015em; }
+.heading-3 { font-family: var(--font-display); font-size: 25px; line-height: 32px; font-weight: 500; letter-spacing: -0.01em; }
+.title { font-family: var(--font-display); font-size: 20px; line-height: 28px; font-weight: 600; letter-spacing: -0.005em; }
+.body-lg { font-family: var(--font-body); font-size: 20px; line-height: 32px; font-weight: 400; }
+.body { font-family: var(--font-body); font-size: 16px; line-height: 26px; font-weight: 400; }
+.caption { font-family: var(--font-body); font-size: 13px; line-height: 20px; font-weight: 400; }
+.label { font-family: var(--font-body); font-size: 16px; line-height: 20px; font-weight: 600; letter-spacing: 0.005em; }
+.fact { font-family: var(--font-mono); font-size: 13px; line-height: 20px; font-weight: 500; letter-spacing: 0.02em; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.16em; }

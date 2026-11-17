@@ -1,0 +1,72 @@
+{
+  "site": {
+    "name": "Enlight Techz",
+    "url": "https://enlighttechz.in",
+    "locale": "en_IN",
+    "defaultTitle": "Enlight Techz | Mobile apps, websites, AI agents and SEO",
+    "waImage": "/og/wa-square.jpg",
+    "baseKeywords": ["Enlight Techz", "IT company Karaikal", "software company Puducherry"]
+  },
+  "pages": {
+    "/": {
+      "title": null,
+      "description": "Enlight Techz builds mobile apps, websites, AI agents, AR/VR and 3D work, and runs SEO, AEO and digital marketing. Based in Karaikal and Puducherry.",
+      "image": "/og/home.jpg",
+      "imageAlt": "Enlight Techz: mobile apps, websites, AI agents and SEO, from Karaikal and Puducherry",
+      "keywords": ["mobile app development", "website development", "web app development", "AI agents", "SEO", "AEO", "AR/VR development", "3D modelling", "digital marketing", "custom CRM", "Karaikal", "Puducherry"]
+    },
+    "/services": {
+      "title": "Services",
+      "description": "Mobile apps, web development, SEO & AEO, AI agents, AR/VR, 3D modelling, digital marketing, enterprise software and custom CRM.",
+      "image": "/og/services.jpg",
+      "imageAlt": "Enlight Techz services: apps, websites, SEO, AI agents, AR/VR and more",
+      "keywords": ["app development services", "web development services", "SEO services", "answer engine optimization", "AI agent development", "AR VR development", "3D modelling services", "digital marketing agency", "enterprise software", "custom CRM development", "website packages"]
+    },
+    "/portfolio": {
+      "title": "Our work",
+      "description": "Projects Enlight Techz has delivered for Chola Taxi, Favoflex and Ansha Accessories.",
+      "image": "/og/portfolio.jpg",
+      "imageAlt": "Work by Enlight Techz for Chola Taxi, Favoflex and Ansha Accessories",
+      "keywords": ["Enlight Techz portfolio", "website case studies", "Chola Taxi", "Favoflex", "Ansha Accessories", "web design Puducherry"]
+    },
+    "/about": {
+      "title": "About us",
+      "description": "Enlight Techz is an IT company in Karaikal and Puducherry, building apps, websites, AI agents and more.",
+      "image": "/og/about.jpg",
+      "imageAlt": "About Enlight Techz, an IT company in Karaikal and Puducherry",
+      "keywords": ["about Enlight Techz", "IT company Karaikal", "tech company Puducherry", "software developers Tamil Nadu"]
+    },
+    "/contact": {
+      "title": "Contact",
+      "description": "Book a free consultation with Enlight Techz. Email info@enlighttechz.in. Karaikal and Puducherry.",
+      "image": "/og/contact.jpg",
+      "imageAlt": "Book a free consultation with Enlight Techz",
+      "keywords": ["contact Enlight Techz", "free consultation", "hire app developers", "hire web developers", "Karaikal"]
+    },
+    "/career": {
+      "title": "Careers",
+      "description": "Jobs and internships at Enlight Techz in Karaikal and Puducherry.",
+      "image": "/og/career.jpg",
+      "imageAlt": "Jobs and internships at Enlight Techz",
+      "keywords": ["Enlight Techz careers", "IT jobs Karaikal", "internship Puducherry", "developer jobs", "digital marketing internship"]
+    },
+    "/privacy-policy": {
+      "title": "Privacy policy",
+      "description": "How we collect, use and protect your information.",
+      "image": "/og/home.jpg",
+      "keywords": ["privacy policy"]
+    },
+    "/payment-policy": {
+      "title": "Payment policy",
+      "description": "Billing and payment information for Enlight Techz projects.",
+      "image": "/og/home.jpg",
+      "keywords": ["payment policy"]
+    },
+    "/terms-and-conditions": {
+      "title": "Terms & conditions",
+      "description": "The terms for using this website.",
+      "image": "/og/home.jpg",
+      "keywords": ["terms and conditions"]
+    }
+  }
+}
