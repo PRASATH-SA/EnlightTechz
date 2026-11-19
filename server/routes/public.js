@@ -2,7 +2,7 @@ const express = require('express');
 const rateLimit = require('express-rate-limit');
 const { Contact, Career, Service, Package } = require('../models');
 const { isDBReady } = require('../config/db');
-const { notify } = require('../lib/mailer');
+const { notify, mailEnabled } = require('../lib/mailer');
 const defaults = require('../data/defaults');
 
 const router = express.Router();
@@ -27,7 +27,7 @@ function dbGuard(req, res, next) {
 }
 
 router.get('/health', (req, res) => {
-  res.json({ status: 'ok', database: isDBReady() ? 'connected' : 'disconnected' });
+  res.json({ status: 'ok', database: isDBReady() ? 'connected' : 'disconnected', email: mailEnabled ? 'configured' : 'not configured' });
 });
 
 router.get('/services', async (req, res) => {
@@ -63,8 +63,21 @@ router.post('/contact', formLimiter, dbGuard, async (req, res) => {
 
   try {
     await Contact.create(data);
-    notify(`New consultation request: ${data.service || 'General'}`, {
+    await notify(`New consultation request: ${data.service || 'General'}`, {
       Name: data.name, Email: data.email, Phone: data.phone, Service: data.service, Message: data.message
+    }, {
+      subject: 'We received your request – Enlight Techz',
+      text: `Hi ${data.name},
+
+Thanks for contacting Enlight Techz. We have your request${data.service ? ` about ${data.service}` : ''} and will reply within one working day.
+
+Your message:
+${data.message}
+
+If anything is urgent, just reply to this email.
+
+Enlight Techz
+https://enlighttechz.in`
     });
     res.json({ success: true, message: 'Thanks. We have your request and will reply within one working day.' });
   } catch (err) {
@@ -88,9 +101,17 @@ router.post('/career', formLimiter, dbGuard, async (req, res) => {
 
   try {
     await Career.create(data);
-    notify(`New application: ${data.position} (${data.type})`, {
+    await notify(`New application: ${data.position} (${data.type})`, {
       Name: data.name, Email: data.email, Phone: data.phone, Position: data.position,
       Type: data.type, Portfolio: data.portfolio, Message: data.message
+    }, {
+      subject: `Application received: ${data.position} – Enlight Techz`,
+      text: `Hi ${data.name},
+
+Thanks for applying for the ${data.position} (${data.type}) role at Enlight Techz. We have your application and will be in touch if your profile matches the role.
+
+Enlight Techz
+https://enlighttechz.in`
     });
     res.json({ success: true, message: 'Application received. We will be in touch if your profile matches the role.' });
   } catch (err) {
