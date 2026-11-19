@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { apiUrl } from '../lib/api';
+import { track } from '../lib/analytics';
 import { Chat, Close, Send } from './Icons';
 
 const GREETING = { role: 'bot', text: "Hello. I'm the Enlight Techz assistant. Ask me about our services, timelines or how to get started." };
@@ -38,7 +39,12 @@ export default function Chatbot() {
   useEffect(() => { if (log.current) log.current.scrollTop = log.current.scrollHeight; }, [messages, busy]);
   useEffect(() => { if (open) field.current?.focus(); }, [open]);
 
-  const close = () => { setOpen(false); launcher.current?.focus(); };
+  const close = () => {
+    track('chat_close', { messages_sent: messages.filter((m) => m.role === 'user').length });
+    setOpen(false);
+    launcher.current?.focus();
+  };
+  const openChat = () => { track('chat_open', { page_path: window.location.pathname }); setOpen(true); };
 
   const send = async (e) => {
     e.preventDefault();
@@ -48,6 +54,8 @@ export default function Chatbot() {
     setMessages((m) => [...m, { role: 'user', text }]);
     setInput('');
     setBusy(true);
+    // Message count only — chat text is never sent to analytics.
+    track('chat_message_sent', { message_number: messages.filter((m) => m.role === 'user').length + 1, page_path: window.location.pathname });
     try {
       const res = await fetch(apiUrl('/api/chat'), {
         method: 'POST',
@@ -55,8 +63,10 @@ export default function Chatbot() {
         body: JSON.stringify({ message: text, sessionId: sid.current })
       });
       const data = await res.json().catch(() => ({}));
+      if (!data.success) track('chat_error', { reason: 'api', status: res.status });
       setMessages((m) => [...m, { role: 'bot', text: data.success ? data.response : data.message || 'I could not answer that just now. Please try again.' }]);
     } catch {
+      track('chat_error', { reason: 'network' });
       setMessages((m) => [...m, { role: 'bot', text: 'I could not reach the server. Please email info@enlighttechz.in.' }]);
     } finally {
       setBusy(false);
@@ -81,7 +91,7 @@ export default function Chatbot() {
             ))}
             {busy && <div className="chat-msg chat-msg--bot chat-msg--typing">Typing…</div>}
           </div>
-          <form className="chat-form" onSubmit={send}>
+          <form className="chat-form" data-track-ignore onSubmit={send}>
             <label htmlFor="chat-input" className="sr-only">Your message</label>
             <input id="chat-input" ref={field} className="et-input" value={input} onChange={(e) => setInput(e.target.value)}
               maxLength={1000} placeholder="Ask about a service" autoComplete="off" />
@@ -89,7 +99,7 @@ export default function Chatbot() {
           </form>
         </section>
       )}
-      <button ref={launcher} className="chat-launch" type="button" onClick={() => (open ? close() : setOpen(true))}
+      <button ref={launcher} className="chat-launch" type="button" onClick={() => (open ? close() : openChat())}
         aria-expanded={open} aria-label={open ? 'Close assistant' : 'Ask the Enlight Techz assistant'}>
         {open ? <Close /> : <Chat />}
       </button>

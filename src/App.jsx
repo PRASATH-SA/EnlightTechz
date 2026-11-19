@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 import ScrollToTop from './components/ScrollToTop';
 import { useMotion } from './hooks/useMotion';
+import { trackPageView } from './lib/analytics';
 
 import Home from './pages/Home';
 import Services from './pages/Services';
@@ -19,7 +20,7 @@ import NotFound from './pages/NotFound';
 
 export default function App() {
   useMotion();
-  const { pathname } = useLocation();
+  const { pathname, search } = useLocation();
   const isAdmin = pathname.startsWith('/admin');
 
   // Butter scroll on the public site; the admin dashboard keeps native scrolling for its tables.
@@ -29,6 +30,9 @@ export default function App() {
     return undefined;
   }, [isAdmin]);
   useEffect(() => () => stopSmoothScroll(), []);
+
+  // GA4 page view per route. Runs after the page's own effects, so document.title is already set.
+  useEffect(() => { trackPageView(pathname); }, [pathname, search]);
 
   return (
     <>

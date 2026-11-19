@@ -4,6 +4,7 @@ import { ArrowRight } from './Icons';
 import { Assurance, Notice } from './ui';
 import { postJSON, useApiData } from '../hooks/useApi';
 import { DEFAULT_SERVICES } from '../data/site';
+import { track, trackFormResult } from '../lib/analytics';
 
 const EMPTY = { name: '', email: '', phone: '', service: '', message: '' };
 
@@ -28,11 +29,16 @@ export default function ContactForm({ title = 'Tell us about your project' }) {
     setState({ sending: true, ok: null, message: '' });
     const res = await postJSON('/api/contact', form);
     setState({ sending: false, ok: res.ok, message: res.message || (res.ok ? 'Thanks. We will reply within one working day.' : 'Something went wrong. Please try again.') });
-    if (res.ok) setForm(EMPTY);
+    trackFormResult('contact', res.ok, { service: form.service || 'not_sure' });
+    if (res.ok) {
+      // GA4 recommended conversion event — mark generate_lead as a key event in GA.
+      track('generate_lead', { form_name: 'contact', service: form.service || 'not_sure', has_phone: Boolean(form.phone) });
+      setForm(EMPTY);
+    }
   };
 
   return (
-    <form className="form" onSubmit={submit} noValidate={false} aria-describedby="contact-status">
+    <form className="form" data-track-form="contact" onSubmit={submit} noValidate={false} aria-describedby="contact-status">
       <h3 className="full">{title}</h3>
       <div className="et-field">
         <label htmlFor="c-name">Name</label>

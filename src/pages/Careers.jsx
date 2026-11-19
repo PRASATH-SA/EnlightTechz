@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ArrowRight } from '../components/Icons';
 import { Notice, PageHead, SectionHeader } from '../components/ui';
 import { postJSON, usePageTitle } from '../hooks/useApi';
+import { track, trackFormResult } from '../lib/analytics';
 import { HEADER_OFFSET, scrollToTarget } from '../lib/smoothScroll';
 import { COMPANY, JOBS } from '../data/site';
 
@@ -27,7 +28,11 @@ export default function Careers() {
     setState({ sending: true, ok: null, message: '' });
     const res = await postJSON('/api/career', form);
     setState({ sending: false, ok: res.ok, message: res.message || (res.ok ? 'Application received.' : 'Something went wrong. Please try again.') });
-    if (res.ok) setForm(EMPTY);
+    trackFormResult('career_application', res.ok, { application_type: form.type, position: form.position });
+    if (res.ok) {
+      track('job_application', { application_type: form.type, position: form.position, has_portfolio: Boolean(form.portfolio) });
+      setForm(EMPTY);
+    }
   };
 
   return (
@@ -69,7 +74,7 @@ export default function Careers() {
         <div className="et-container grid-2">
           <SectionHeader id="apply-title" title="Apply"
             lead={`Tell us about yourself and share a link to your work. Prefer email? Send your resume to ${COMPANY.email}.`} />
-          <form className="form et-glass et-glass-card et-reveal" onSubmit={submit}>
+          <form className="form et-glass et-glass-card et-reveal" data-track-form="career_application" onSubmit={submit}>
             <div className="et-field">
               <label htmlFor="a-name">Name</label>
               <input id="a-name" className="et-input" name="name" value={form.name} onChange={set} required maxLength={120} autoComplete="name" />
